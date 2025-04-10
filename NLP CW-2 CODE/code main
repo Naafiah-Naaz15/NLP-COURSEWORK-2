@@ -1,0 +1,18 @@
+pip install pandas numpy torch transformers scikit-learn
+# data_preprocessing.py
+import pandas as pd
+from sklearn.model_selection import train_test_split
+
+def load_data(train_path, test_path):
+    train_df = pd.read_csv(train_path, sep='\t')
+    test_df = pd.read_csv(test_path, sep='\t')
+
+    return train_df, test_df
+
+train_path = '/content/lcp_single_train.tsv'
+test_path = '/content/lcp_single_test.tsv'
+
+train_df, test_df = load_data(train_path, test_path)
+
+print(train_df.head())
+
